@@ -1,0 +1,2 @@
+node seraphine.js
+pause
