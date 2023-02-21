@@ -70,36 +70,26 @@ client.on('messageCreate', message => {
     if (!league_replies.includes(0)) {
       message.channel.send("I heard I'm in that game");
       league_replies.push(0);
-    }
-    else if (!league_replies.includes(1)) {
+    } else if (!league_replies.includes(1)) {
       message.channel.send("I'll play mid!");
       league_replies.push(1);
-    }
-    else {
+    } else {
       message.channel.send("When will jungle Seraphine be meta?");
       league_replies = [];
     }
-  }
-
-  if (!message.content.includes(prefix)) return;
-  else {
-    if (lowercase.includes("I lost") || lowercase.includes("we lost") || lowercase.includes("I'm tilted")) {
-      if (!defeat_replies.includes(0)) {
-        message.channel.send("Probably mid gap. I'll sub in!");
-        defeat_replies.push(0);
-      }
-      else if (!defeat_replies.includes(1)) {
-        message.channel.send("Unlucky. We'll win the next one!");
-        defeat_replies.push(1);
-      }
-      else if (!defeat_replies.includes(2)) {
-        message.channel.send("Jungle diff as usual, smh");
-        defeat_replies.push(2);
-      }
-      else {
-        message.channel.send("Don't tilt, we can play better!");
-        defeat_replies = [];
-      }
+  } else if (lowercase.includes("I lost") || lowercase.includes("we lost") || lowercase.includes("I'm tilted")) {
+    if (!defeat_replies.includes(0)) {
+      message.channel.send("Probably mid gap. I'll sub in!");
+      defeat_replies.push(0);
+    } else if (!defeat_replies.includes(1)) {
+      message.channel.send("Unlucky. We'll win the next one!");
+      defeat_replies.push(1);
+    } else if (!defeat_replies.includes(2)) {
+      message.channel.send("Jungle diff as usual, smh");
+      defeat_replies.push(2);
+    } else {
+      message.channel.send("Don't tilt, we can play better!");
+      defeat_replies = [];
     }
   }
 });
